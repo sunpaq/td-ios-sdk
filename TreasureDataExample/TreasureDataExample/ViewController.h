@@ -13,5 +13,8 @@
 - (IBAction)addEvent:(id)sender;
 - (IBAction)uploadEvents:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *addEventBtn;
+@property (weak, nonatomic) IBOutlet UIButton *uploadEventsBtn;
+
 @end
 

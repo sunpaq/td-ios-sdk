@@ -11,6 +11,7 @@
 #import "math.h"
 #import "TDClient.h"
 #import "Session.h"
+#import "TDConfiguration.h"
 
 static bool isTraceLoggingEnabled = false;
 static bool isEventCompressionEnabled = true;
@@ -40,6 +41,9 @@ static NSString *sessionEventEnd = @"end";
 static Session *session = nil;
 static long sessionTimeoutMilli = -1;
 
+static NSString *defaultAppEventTable = @"main";
+static NSString *defaultAppEventDatabase = @"td_ios_app";
+
 @interface TreasureData ()
 @property BOOL autoAppendUniqId;
 @property BOOL autoAppendModelInformation;
@@ -49,10 +53,18 @@ static long sessionTimeoutMilli = -1;
 @property BOOL serverSideUploadTimestamp;
 @property NSString *serverSideUploadTimestampColumn;
 @property NSString *autoAppendRecordUUIDColumn;
+
+// TODO: make configuration unmodifiable, (copy) currently results in error
+@property (nonatomic) TDConfiguration *configuration;
 @end
 
 @implementation TreasureData
-- (id)initWithApiKey:(NSString *)apiKey {
+
+#pragma mark - Initialization
+
+// deprecated
+- (id)initWithApiKey:(NSString *)apiKey
+{
     self = [self init];
 
     if (self) {
@@ -82,6 +94,51 @@ static long sessionTimeoutMilli = -1;
     return self;
 }
 
+- (id)initWithConfiguration:(TDConfiguration *)configuration
+{
+    if (self = [super init]) {
+        // Currently in migration
+        if ([configuration isValid]) {
+            self.configuration = configuration;
+            // static members
+            defaultApiEndpoint = configuration.endpoint;
+            defaultAppEventDatabase = configuration.defaultDatabase;
+
+            [TDClient initializeEncryptionKey:configuration.encryptionKey];
+            self.client = [[TDClient alloc] initWithApiKey:configuration.apiKey apiEndpoint:configuration.endpoint];
+            if (!self.client) {
+                KCLog(@"Failed to initialize client");
+                return nil;
+            }
+            self.client.enableRetryUploading = configuration.shouldRetryUploading;
+            
+            // backward compats
+            self.defaultDatabase = configuration.defaultDatabase;
+            
+            if (configuration.autoCaptureLifecycleEvents) {
+                [self observeLifecycleEvents];
+            }
+            
+        } else {
+            KCLog(@"%@", [@"Config violations:\n"
+                          stringByAppendingString:[[configuration violations] componentsJoinedByString:@"\n"]]);
+            return nil;
+        }
+    }
+    return self;
+}
+
+#pragma mark - Delegation
+
+@synthesize delegate;
+- (void)setDelegate:(id<TreasureDataDelegate>)aDelegate
+{
+    if (delegate != aDelegate) {
+        delegate = aDelegate;
+    }
+}
+
+#pragma mark - Event tracking
 
 - (void)event:(NSDictionary *)record table:(NSString *)table {
     [self addEvent:record table:table];
@@ -136,6 +193,11 @@ static long sessionTimeoutMilli = -1;
                 }
 
                 NSString *tag = [NSString stringWithFormat:@"%@.%@", database, table];
+                
+                if ([delegate respondsToSelector:@selector(didSentEvent:)]) {
+                    [delegate performSelector:@selector(didSentEvent:) withObject:record];
+                }
+                
                 [self.client addEventWithCallbacks:record toEventCollection:tag onSuccess:onSuccess onError:onError];
             }
         }
@@ -295,50 +357,7 @@ static long sessionTimeoutMilli = -1;
     [self uploadEventsWithCallback:nil onError:nil];
 }
 
-
-- (void)setApiEndpoint:(NSString*)endpoint {
-    self.client.apiEndpoint = endpoint;
-}
-
-- (void)disableAutoAppendUniqId {
-    self.autoAppendUniqId = false;
-}
-
-- (void)enableAutoAppendUniqId {
-    self.autoAppendUniqId = true;
-}
-
-- (void)disableAutoAppendModelInformation {
-    self.autoAppendModelInformation = false;
-}
-
-- (void)enableAutoAppendModelInformation {
-    self.autoAppendModelInformation = true;
-}
-
-- (void)enableAutoAppendAppInformation {
-    self.autoAppendAppInformation = true;
-}
-
-- (void)disableAutoAppendAppInformation {
-    self.autoAppendAppInformation = false;
-}
-
-- (void)enableAutoAppendLocaleInformation {
-    self.autoAppendLocaleInformation = true;
-}
-
-- (void)disableAutoAppendLocaleInformation {
-    self.autoAppendLocaleInformation = false;
-}
-
-- (void)disableRetryUploading {
-    self.client.enableRetryUploading = false;
-}
-
-- (void)enableRetryUploading {
-    self.client.enableRetryUploading = true;
-}
+#pragma mark - Persisted states
 
 - (BOOL)isFirstRun {
     NSInteger state = [[NSUserDefaults standardUserDefaults] integerForKey:storageKeyOfFirstRun];
@@ -350,10 +369,13 @@ static long sessionTimeoutMilli = -1;
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+// @Deprecated
 - (void)initializeFirstRun {
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:storageKeyOfFirstRun];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+#pragma mark - Session
 
 - (void)startSession:(NSString*)table {
     [self startSession:table database:self.defaultDatabase];
@@ -409,6 +431,52 @@ static long sessionTimeoutMilli = -1;
     sessionTimeoutMilli = to;
 }
 
+#pragma mark - Old settings
+
+- (void)setApiEndpoint:(NSString*)endpoint {
+    self.client.apiEndpoint = endpoint;
+}
+
+- (void)disableAutoAppendUniqId {
+    self.autoAppendUniqId = false;
+}
+
+- (void)enableAutoAppendUniqId {
+    self.autoAppendUniqId = true;
+}
+
+- (void)disableAutoAppendModelInformation {
+    self.autoAppendModelInformation = false;
+}
+
+- (void)enableAutoAppendModelInformation {
+    self.autoAppendModelInformation = true;
+}
+
+- (void)enableAutoAppendAppInformation {
+    self.autoAppendAppInformation = true;
+}
+
+- (void)disableAutoAppendAppInformation {
+    self.autoAppendAppInformation = false;
+}
+
+- (void)enableAutoAppendLocaleInformation {
+    self.autoAppendLocaleInformation = true;
+}
+
+- (void)disableAutoAppendLocaleInformation {
+    self.autoAppendLocaleInformation = false;
+}
+
+- (void)disableRetryUploading {
+    self.client.enableRetryUploading = false;
+}
+
+- (void)enableRetryUploading {
+    self.client.enableRetryUploading = true;
+}
+
 - (void)enableServerSideUploadTimestamp {
     self.serverSideUploadTimestamp = TRUE;
     self.serverSideUploadTimestampColumn = nil;
@@ -428,9 +496,11 @@ static long sessionTimeoutMilli = -1;
     self.serverSideUploadTimestampColumn = nil;
 }
 
+// deprecated
 - (void)enableAutoAppendRecordUUID {
     self.autoAppendRecordUUIDColumn = @"record_uuid";
 }
+
 
 - (void)enableAutoAppendRecordUUID: (NSString*)columnName {
     if (!columnName) {
@@ -444,6 +514,14 @@ static long sessionTimeoutMilli = -1;
     self.autoAppendRecordUUIDColumn = nil;
 }
 
++ (void)config:(TDConfiguration *)configuration {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] initWithConfiguration:configuration];
+    });
+}
+
+// Deprecated
 + (void)initializeWithApiKey:(NSString *)apiKey {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -451,16 +529,17 @@ static long sessionTimeoutMilli = -1;
     });
 }
 
+// Deprecated
 + (void)initializeEncryptionKey:(NSString*)encryptionKey {
     [TDClient initializeEncryptionKey:encryptionKey];
 }
-
 
 + (instancetype)sharedInstance {
     NSAssert(sharedInstance, @"%@ sharedInstance called before withSecret", self);
     return sharedInstance;
 }
 
+// Deprecated
 + (void)initializeApiEndpoint:(NSString *)apiEndpoint {
     defaultApiEndpoint = apiEndpoint;
 }
@@ -488,6 +567,75 @@ static long sessionTimeoutMilli = -1;
 + (void)enableTraceLogging {
     isTraceLoggingEnabled = true;
 }
+
+#pragma mark - Auto Capturing
+
+NSString *const TDTrackedAppVersionKey = @"TDTrackedAppVersion";
+NSString *const TDTrackedAppBuildKey = @"TDTrackedAppBuild";
+
+- (void)observeLifecycleEvents {
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+//    for (NSString *name in @[ UIApplicationDidEnterBackgroundNotification,
+//                              UIApplicationDidFinishLaunchingNotification,
+//                              UIApplicationWillEnterForegroundNotification,
+//                              UIApplicationWillTerminateNotification,
+//                              UIApplicationWillResignActiveNotification,
+//                              UIApplicationDidBecomeActiveNotification ]) {
+//        [nc addObserver:self selector:@selector(handleAppStateNotification:) name:name object:nil];
+//    }
+    [nc addObserver:self selector:@selector(handleAppDidLaunching:) name:@"UIApplicationDidFinishLaunchingNotification" object:nil];
+}
+
+- (void) handleAppDidLaunching:(NSNotification *)notification
+{
+    NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    NSString *currentBuild = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    NSString *previousVersion = [[NSUserDefaults standardUserDefaults] stringForKey:TDTrackedAppVersionKey];
+    NSString *previousBuild = [[NSUserDefaults standardUserDefaults] stringForKey:TDTrackedAppBuildKey];
+    
+    // TODO: Fix this hell
+    if ([[TreasureData sharedInstance] isFirstRun]) {
+        [[TreasureData sharedInstance] clearFirstRun];
+        [self addEvent:@{ @"event": @"App Installed",
+                          @"version": currentVersion,
+                          @"build": currentBuild}
+              database:self.configuration.defaultDatabase
+                 table:self.configuration.defaultTable];
+        [NSTimer scheduledTimerWithTimeInterval:3 repeats:false block:^(NSTimer * _Nonnull timer) {
+            [self addEvent:@{ @"event": @"App Opened" }
+                  database:self.configuration.defaultDatabase
+                     table:self.configuration.defaultTable];
+        }];
+    } else if (![previousVersion isEqualToString:currentVersion]) {
+        [self addEvent:@{ @"event": @"App Updated",
+                          @"previous_version": previousVersion,
+                          @"previous_build": previousBuild,
+                          @"version": currentVersion,
+                          @"build": currentBuild}
+              database:self.configuration.defaultDatabase
+                 table:self.configuration.defaultTable];
+        
+        [NSTimer scheduledTimerWithTimeInterval:3 repeats:false block:^(NSTimer * _Nonnull timer) {
+            [self addEvent:@{ @"event": @"App Opened", @"version": currentVersion, @"build": currentBuild }
+                  database:self.configuration.defaultDatabase
+                     table:self.configuration.defaultTable];
+        }];
+    } else {
+        [self addEvent:@{ @"event": @"App Opened", @"version": currentVersion, @"build": currentBuild }
+              database:self.configuration.defaultDatabase
+                 table:self.configuration.defaultTable];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:TDTrackedAppVersionKey];
+    [[NSUserDefaults standardUserDefaults] setObject:currentBuild forKey:TDTrackedAppBuildKey];
+}
+
+//- (void) handleAppStateNotification:(NSNotification *)notification {
+//    NSMutableDictionary *notificationInfo = [NSMutableDictionary dictionaryWithDictionary:notification.userInfo];
+//    [notificationInfo addEntriesFromDictionary:@{@"event": notification.name}];
+//    NSDictionary *eventData = @{@"event": notification.name};
+//    [self addEvent:eventData database:self.configuration.defaultDatabase table:self.configuration.defaultTable];
+//}
 
 @end
 

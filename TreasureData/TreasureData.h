@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "TDClient.h"
+#import "TDConfiguration.h"
+
+@protocol TreasureDataDelegate <NSObject>
+@optional
+- (void) didSentEvent:(NSDictionary *)data;
+@end
 
 @interface TreasureData : NSObject
 
@@ -15,15 +21,19 @@
 
 @property(nonatomic, strong) NSString *defaultDatabase;
 
-+ (void)initializeWithApiKey:(NSString *)apiKey;
+@property (nonatomic, weak) id <TreasureDataDelegate> delegate;
+
++ (void)config:(TDConfiguration *)configuration;
+
++ (void)initializeWithApiKey:(NSString *)apiKey DEPRECATED_ATTRIBUTE;
 
 + (instancetype)sharedInstance;
 
-+ (void)initializeApiEndpoint:(NSString *)apiEndpoint;
++ (void)initializeApiEndpoint:(NSString *)apiEndpoint DEPRECATED_ATTRIBUTE;
 
-- (id)initWithApiKey:(NSString *)apiKey;
+- (id)initWithApiKey:(NSString *)apiKey DEPRECATED_ATTRIBUTE;
 
-- (void)setDefaultDatabase:(NSString*)defaultDatabase;
+- (void)setDefaultDatabase:(NSString*)defaultDatabase DEPRECATED_ATTRIBUTE;
 
 - (void)event:(NSDictionary *)record database:(NSString *)database table:(NSString *)table DEPRECATED_ATTRIBUTE;
 
@@ -99,11 +109,13 @@
 
 - (void)disableServerSideUploadTimestamp;
 
-- (void)enableAutoAppendRecordUUID;
+- (void)enableAutoAppendRecordUUID DEPRECATED_ATTRIBUTE;
 
-- (void)enableAutoAppendRecordUUID: (NSString*)columnName;
+- (void)enableAutoAppendRecordUUID: (NSString*)columnName DEPRECATED_ATTRIBUTE;
 
 - (void)disableAutoAppendRecordUUID;
+
+- (void) setup;
 
 + (void)disableEventCompression;
 
@@ -117,5 +129,5 @@
 
 + (void)enableTraceLogging;
 
-+ (void)initializeEncryptionKey:(NSString*)encryptionKey;
++ (void)initializeEncryptionKey:(NSString*)encryptionKey DEPRECATED_ATTRIBUTE;
 @end

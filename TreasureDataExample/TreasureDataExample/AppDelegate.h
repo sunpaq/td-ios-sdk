@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h>
+#import "TreasureData.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, TreasureDataDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-
 @end
-

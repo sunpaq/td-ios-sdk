@@ -17,6 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.addEventBtn.layer.borderWidth = 1.0f;
+    self.addEventBtn.layer.borderColor = [self.view.tintColor CGColor];
+    self.addEventBtn.layer.cornerRadius = 10;
+    self.uploadEventsBtn.layer.borderWidth = 1.0f;
+    self.uploadEventsBtn.layer.borderColor = [self.view.tintColor CGColor];
+    self.uploadEventsBtn.layer.cornerRadius = 10;
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,13 +34,13 @@
 }
 
 - (IBAction)addEvent:(id)sender {
-    NSLog(@"Click!!!!");
     [[TreasureData sharedInstance]
      addEventWithCallback:@{
+                            @"event": @"User",
                             @"name": @"komamitsu",
                             @"age": @99
                             }
-     table:@"demotbl"
+     table:@"mobile"
      onSuccess:^(){
          NSLog(@"addEvent: success");
      }
