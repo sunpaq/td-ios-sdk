@@ -1,0 +1,902 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B26614635B88A145FF1D1977C99C32B /* KIOEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7F7CD2C5A5F163AF5106D6074B6F0C /* KIOEventStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		218C3B1D750C18325BBAD3B4DE5C98E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FBE1D2FCD9C6251842A050FAF411C2 /* Foundation.framework */; };
+		21AF175670ED9E1C01556FB8CD4620FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FBE1D2FCD9C6251842A050FAF411C2 /* Foundation.framework */; };
+		2BC1311673954EEFFE991A452CD52905 /* KIOEventStore_PrivateMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 59D4A733B93E0F4669ACB91D0C9BCD2D /* KIOEventStore_PrivateMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F2E585AAC1A3285808170148B5C6EEC /* Deflate.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBCC0258388EA6A056B09ABC3699CCA /* Deflate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		31A0C0D72E85A4E8BE37052C4029D4A5 /* KeenClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DC2365D622EB9A23D185BAF615411E /* KeenClient.m */; };
+		32EEE4FD56F6C93EEC01AAA5D0146885 /* Pods-TreasureDataExampleSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6766033FF426FA6C391663DF2D74402E /* Pods-TreasureDataExampleSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EC0465F1658283662C5EBEC4C0BEFF5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 629F432D257F491A28D289FCB391002B /* Session.m */; };
+		3ED42887745A83FCFADDAB1E577D6D0E /* TDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F888B5C3A8D1A39AA891DE36FE2BAFE /* TDUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		49F53B4CC8F0F24815A0F329667ACA04 /* TreasureData-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEA2E82FB449BEB3ED762312507C7DA /* TreasureData-iOS-SDK-dummy.m */; };
+		549AE1F42262E5C39FE2D9394E81BA9F /* KeenProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC307BDF69B715944D83CEF233F7A8F /* KeenProperties.m */; };
+		55F34EFB323A96B721F9EB8A00BF3C1B /* TDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C43FE20E8D89FBFC1A2C83181F8B97B4 /* TDClient.m */; };
+		56295C3E097D54F3EB4B1654A60837CB /* TreasureData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FF9F86B5790A085FA40330CB038A0BC /* TreasureData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63A7F75BAE7F58E6A2F176888E531C24 /* Session.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D34517CDEE5F72FE7228569BA2B9001 /* Session.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		68E468F3AAE5A33A5EAB341ACDB01EA2 /* MF_Base64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AAC52E5DDE021718921F436B46CB238 /* MF_Base64Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		692070933761684B9FB7A4507372E752 /* KeenClientTD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973067DB993032C0B453089B417CA051 /* KeenClientTD.framework */; };
+		6BC67CCF0999FF1501978F943C5956DD /* KeenConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B26351C9676FE8656EEA72A9FAED392 /* KeenConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F80E5BF4B8F98C6FB6632D38735F840 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FBE1D2FCD9C6251842A050FAF411C2 /* Foundation.framework */; };
+		8C2FFD25A7D0C71AC672F68B85B27115 /* keen_io_sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CEF2D4C52D24FDDAF75B885CE48968F /* keen_io_sqlite3.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		90DD3A08EEC168C99E73719D45E53DA7 /* KeenConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C38FAEE9877B2FA1C8C2622132AD3D /* KeenConstants.m */; };
+		94B9AC15A8421C8E3FF098325E5C1660 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A06526D337938AFFB0DEAA8359E790E /* MF_Base64Additions.m */; };
+		9AE40186E2F81C4C339B937EED6EF720 /* Pods-TreasureDataExampleSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D06D94D5C805E2B4A7AC5613DAFFA /* Pods-TreasureDataExampleSwift-dummy.m */; };
+		A0E72C98941972F879FB2F12E73DFAD9 /* TreasureData-iOS-SDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 002D1924BC40F15F2B27028D89EE9760 /* TreasureData-iOS-SDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD021AC8ECF68D964592B7A1200891BA /* KeenClientTD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A02B2D1C68A4C494DC4AB69922BC23 /* KeenClientTD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C12F6425C21384F293AF9E7B5E5377DA /* KeenClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A1B9B1CAB59C00488CE9A9CB0B96C82 /* KeenClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1C7319ACB1E8211F074CC2DAB76F0A3 /* TDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 95ABD5805D01DC4CA75B68E6C329AEBB /* TDUtils.m */; };
+		C4662B41B4ED7CE4F9B6E253C56AF6A9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F5EE6F01D4BB6FFE7B31F051D2B93 /* Security.framework */; };
+		C8511B8AA15BD42A38A2CB048C749837 /* KeenClientTD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5CE71E290E23986383B97C56AB2A0 /* KeenClientTD-dummy.m */; };
+		D217FDB6D76321A77837293F0DF3FAB9 /* Deflate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51387A4108F1A081DA985AB1DF530EFF /* Deflate.m */; };
+		D6282DCD1EE5C380DEED4521A1DB25B2 /* KIOEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31DFA6FB0AAE96A603CE61B71A1CA /* KIOEventStore.m */; };
+		E4700EB1A047A7A6F8A22835CF88213F /* TDClient.h in Headers */ = {isa = PBXBuildFile; fileRef = FB1928B555FCB2174DE287703B9068B3 /* TDClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E923819F1D86FB5C6E0133A672B7A9FA /* KeenProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 34655AEC73D45159A7049839980A8781 /* KeenProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F068B2F25DB2169B09F81927C770958A /* keen_io_sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = F30DAB5EDAD93CE10E6ECD3623F2F1BD /* keen_io_sqlite3.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F6115D25D1744FB8A193DC191ACEEBC1 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1A86FC5DBD19F47618BB0278A53B0B /* Constants.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FADB47F65A105510C5A0ED8905FA9222 /* TreasureData.m in Sources */ = {isa = PBXBuildFile; fileRef = E14B0DAFA40E601E070EE7CAF048CBC3 /* TreasureData.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1855F206C7984AE4BECD5DF0778C37D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70FC99F7A790FD60631158C17A8F60DC;
+			remoteInfo = "TreasureData-iOS-SDK";
+		};
+		597AA1F2B2ED517454A81679CC82725A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 136A2FC4AFCE0BD36B84CA331DD525A6;
+			remoteInfo = KeenClientTD;
+		};
+		CA98A47A2AAFD868F18D7953CA9E5AD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 136A2FC4AFCE0BD36B84CA331DD525A6;
+			remoteInfo = KeenClientTD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		002D1924BC40F15F2B27028D89EE9760 /* TreasureData-iOS-SDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TreasureData-iOS-SDK-umbrella.h"; sourceTree = "<group>"; };
+		057186F78137D3885174998400B8CE8B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CE3A7AE4ED8A6C6B598BA7F07FD6CC /* TreasureData-iOS-SDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "TreasureData-iOS-SDK.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0FF9F86B5790A085FA40330CB038A0BC /* TreasureData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TreasureData.h; path = TreasureData/TreasureData.h; sourceTree = "<group>"; };
+		1A0F5EE6F01D4BB6FFE7B31F051D2B93 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		2211B5B359F8D517C90BDA062C486DE7 /* KeenClientTD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeenClientTD-prefix.pch"; sourceTree = "<group>"; };
+		227C514AA6EAA8331B9DBECF04014330 /* TreasureData-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TreasureData-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
+		24DC2365D622EB9A23D185BAF615411E /* KeenClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeenClient.m; path = KeenClient/KeenClient.m; sourceTree = "<group>"; };
+		27FBE1D2FCD9C6251842A050FAF411C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2CEF2D4C52D24FDDAF75B885CE48968F /* keen_io_sqlite3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = keen_io_sqlite3.h; path = "Library/sqlite-amalgamation/keen_io_sqlite3.h"; sourceTree = "<group>"; };
+		2FC307BDF69B715944D83CEF233F7A8F /* KeenProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeenProperties.m; path = KeenClient/KeenProperties.m; sourceTree = "<group>"; };
+		32A02B2D1C68A4C494DC4AB69922BC23 /* KeenClientTD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeenClientTD-umbrella.h"; sourceTree = "<group>"; };
+		32F8B8DBD028AC88967B9D607CA3895C /* Pods-TreasureDataExampleSwift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TreasureDataExampleSwift-frameworks.sh"; sourceTree = "<group>"; };
+		34655AEC73D45159A7049839980A8781 /* KeenProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeenProperties.h; path = KeenClient/KeenProperties.h; sourceTree = "<group>"; };
+		35F6C239E783754FD896B8CB6C2B323A /* Pods-TreasureDataExampleSwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TreasureDataExampleSwift-acknowledgements.plist"; sourceTree = "<group>"; };
+		3A06526D337938AFFB0DEAA8359E790E /* MF_Base64Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MF_Base64Additions.m; path = KeenClient/MF_Base64Additions.m; sourceTree = "<group>"; };
+		3F1A86FC5DBD19F47618BB0278A53B0B /* Constants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = TreasureData/Constants.h; sourceTree = "<group>"; };
+		4AAC52E5DDE021718921F436B46CB238 /* MF_Base64Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MF_Base64Additions.h; path = KeenClient/MF_Base64Additions.h; sourceTree = "<group>"; };
+		4CD31DFA6FB0AAE96A603CE61B71A1CA /* KIOEventStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KIOEventStore.m; path = KeenClient/KIOEventStore.m; sourceTree = "<group>"; };
+		51387A4108F1A081DA985AB1DF530EFF /* Deflate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Deflate.m; path = TreasureData/Deflate.m; sourceTree = "<group>"; };
+		59D4A733B93E0F4669ACB91D0C9BCD2D /* KIOEventStore_PrivateMethods.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KIOEventStore_PrivateMethods.h; path = KeenClient/KIOEventStore_PrivateMethods.h; sourceTree = "<group>"; };
+		629F432D257F491A28D289FCB391002B /* Session.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Session.m; path = TreasureData/Session.m; sourceTree = "<group>"; };
+		6766033FF426FA6C391663DF2D74402E /* Pods-TreasureDataExampleSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TreasureDataExampleSwift-umbrella.h"; sourceTree = "<group>"; };
+		6B26351C9676FE8656EEA72A9FAED392 /* KeenConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeenConstants.h; path = KeenClient/KeenConstants.h; sourceTree = "<group>"; };
+		6C3F595DAD8C0D9094475FC61A949953 /* KeenClientTD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeenClientTD.xcconfig; sourceTree = "<group>"; };
+		6D34517CDEE5F72FE7228569BA2B9001 /* Session.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Session.h; path = TreasureData/Session.h; sourceTree = "<group>"; };
+		74A0E044CDEB6986E062118C6D3736B4 /* KeenClientTD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeenClientTD.modulemap; sourceTree = "<group>"; };
+		7AEA2E82FB449BEB3ED762312507C7DA /* TreasureData-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TreasureData-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
+		7FA5CE71E290E23986383B97C56AB2A0 /* KeenClientTD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeenClientTD-dummy.m"; sourceTree = "<group>"; };
+		80C38FAEE9877B2FA1C8C2622132AD3D /* KeenConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KeenConstants.m; path = KeenClient/KeenConstants.m; sourceTree = "<group>"; };
+		837BB48579F7731B2FC74E78A135C5C3 /* TreasureData-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TreasureData-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
+		8A1B9B1CAB59C00488CE9A9CB0B96C82 /* KeenClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeenClient.h; path = KeenClient/KeenClient.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95ABD5805D01DC4CA75B68E6C329AEBB /* TDUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TDUtils.m; path = TreasureData/TDUtils.m; sourceTree = "<group>"; };
+		95E629854C62745363E84BA566043E91 /* TreasureData-iOS-SDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "TreasureData-iOS-SDK.modulemap"; sourceTree = "<group>"; };
+		973067DB993032C0B453089B417CA051 /* KeenClientTD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeenClientTD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA6C9AD18555BF9A47E3ABE735DB049 /* TreasureData_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TreasureData_iOS_SDK.framework; path = "TreasureData-iOS-SDK.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5D507E664781A18C3575314A56AB79 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F888B5C3A8D1A39AA891DE36FE2BAFE /* TDUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TDUtils.h; path = TreasureData/TDUtils.h; sourceTree = "<group>"; };
+		A1342D98FDD5AE3B0BED0AC1A819BAC7 /* KeenClientTD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeenClientTD.framework; path = KeenClientTD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A76CE01233502D6EA14642882628871C /* Pods_TreasureDataExampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TreasureDataExampleSwift.framework; path = "Pods-TreasureDataExampleSwift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABBCC0258388EA6A056B09ABC3699CCA /* Deflate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Deflate.h; path = TreasureData/Deflate.h; sourceTree = "<group>"; };
+		BB5D06D94D5C805E2B4A7AC5613DAFFA /* Pods-TreasureDataExampleSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TreasureDataExampleSwift-dummy.m"; sourceTree = "<group>"; };
+		C43FE20E8D89FBFC1A2C83181F8B97B4 /* TDClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TDClient.m; path = TreasureData/TDClient.m; sourceTree = "<group>"; };
+		CC589B48AAFFCDCA0D9EB0526256C134 /* Pods-TreasureDataExampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TreasureDataExampleSwift.release.xcconfig"; sourceTree = "<group>"; };
+		D4D01CDE53BEFA41D8A1E03A37293B41 /* Pods-TreasureDataExampleSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TreasureDataExampleSwift.modulemap"; sourceTree = "<group>"; };
+		D812D97D8D16F06613816F8DFF3F534B /* Pods-TreasureDataExampleSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TreasureDataExampleSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DABA35D5AE06A5582F235C4BE80267A2 /* Pods-TreasureDataExampleSwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TreasureDataExampleSwift-resources.sh"; sourceTree = "<group>"; };
+		DE8359009C82F15AC30318B37B59D5B7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF9168273612A216904F7D57E6E5B527 /* Pods-TreasureDataExampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TreasureDataExampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		E14B0DAFA40E601E070EE7CAF048CBC3 /* TreasureData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TreasureData.m; path = TreasureData/TreasureData.m; sourceTree = "<group>"; };
+		F30DAB5EDAD93CE10E6ECD3623F2F1BD /* keen_io_sqlite3.c */ = {isa = PBXFileReference; includeInIndex = 1; name = keen_io_sqlite3.c; path = "Library/sqlite-amalgamation/keen_io_sqlite3.c"; sourceTree = "<group>"; };
+		FB1928B555FCB2174DE287703B9068B3 /* TDClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TDClient.h; path = TreasureData/TDClient.h; sourceTree = "<group>"; };
+		FC7F7CD2C5A5F163AF5106D6074B6F0C /* KIOEventStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KIOEventStore.h; path = KeenClient/KIOEventStore.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DA1BFB33A74EBFBEC11BC27F1BB8CEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				218C3B1D750C18325BBAD3B4DE5C98E9 /* Foundation.framework in Frameworks */,
+				692070933761684B9FB7A4507372E752 /* KeenClientTD.framework in Frameworks */,
+				C4662B41B4ED7CE4F9B6E253C56AF6A9 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F603DBC072DA1D566B37A964F409B44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21AF175670ED9E1C01556FB8CD4620FD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E77CC934E743C7C55EFC2B9996A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F80E5BF4B8F98C6FB6632D38735F840 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09A375930C37A0BB860FDFB1B90B6D1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				973067DB993032C0B453089B417CA051 /* KeenClientTD.framework */,
+				FDD4ACDF2FF249A7DE641F3F21BEBC06 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0DBC4166F685CB35740070EB81BEF851 /* keen_sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				F30DAB5EDAD93CE10E6ECD3623F2F1BD /* keen_io_sqlite3.c */,
+				2CEF2D4C52D24FDDAF75B885CE48968F /* keen_io_sqlite3.h */,
+			);
+			name = keen_sqlite;
+			sourceTree = "<group>";
+		};
+		3C46CBCE531DA2DFB65942BB037E5DDB /* TreasureData-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3F1A86FC5DBD19F47618BB0278A53B0B /* Constants.h */,
+				ABBCC0258388EA6A056B09ABC3699CCA /* Deflate.h */,
+				51387A4108F1A081DA985AB1DF530EFF /* Deflate.m */,
+				6D34517CDEE5F72FE7228569BA2B9001 /* Session.h */,
+				629F432D257F491A28D289FCB391002B /* Session.m */,
+				FB1928B555FCB2174DE287703B9068B3 /* TDClient.h */,
+				C43FE20E8D89FBFC1A2C83181F8B97B4 /* TDClient.m */,
+				9F888B5C3A8D1A39AA891DE36FE2BAFE /* TDUtils.h */,
+				95ABD5805D01DC4CA75B68E6C329AEBB /* TDUtils.m */,
+				0FF9F86B5790A085FA40330CB038A0BC /* TreasureData.h */,
+				E14B0DAFA40E601E070EE7CAF048CBC3 /* TreasureData.m */,
+				BAB387D3ADDDDD43F09F4BE1C33C1DC2 /* Pod */,
+				F4CEBD27C01AA7DC84579545ED30BB7E /* Support Files */,
+			);
+			name = "TreasureData-iOS-SDK";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				D1081BF6440DA82F731D406441CA383F /* Development Pods */,
+				09A375930C37A0BB860FDFB1B90B6D1C /* Frameworks */,
+				8D01BE47485804527E322593FD5B46B6 /* Pods */,
+				FA8B04AEA47EC6D3F461AD079B947098 /* Products */,
+				F60145B1B513CD598F4B8A8F1CDBFD96 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		84DA83E73D8969EF03459B49502E720F /* KeenClientTD */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B9B1CAB59C00488CE9A9CB0B96C82 /* KeenClient.h */,
+				24DC2365D622EB9A23D185BAF615411E /* KeenClient.m */,
+				6B26351C9676FE8656EEA72A9FAED392 /* KeenConstants.h */,
+				80C38FAEE9877B2FA1C8C2622132AD3D /* KeenConstants.m */,
+				34655AEC73D45159A7049839980A8781 /* KeenProperties.h */,
+				2FC307BDF69B715944D83CEF233F7A8F /* KeenProperties.m */,
+				FC7F7CD2C5A5F163AF5106D6074B6F0C /* KIOEventStore.h */,
+				4CD31DFA6FB0AAE96A603CE61B71A1CA /* KIOEventStore.m */,
+				59D4A733B93E0F4669ACB91D0C9BCD2D /* KIOEventStore_PrivateMethods.h */,
+				4AAC52E5DDE021718921F436B46CB238 /* MF_Base64Additions.h */,
+				3A06526D337938AFFB0DEAA8359E790E /* MF_Base64Additions.m */,
+				0DBC4166F685CB35740070EB81BEF851 /* keen_sqlite */,
+				D6A803A745E523EC73EAF5A8045A0D79 /* Support Files */,
+			);
+			name = KeenClientTD;
+			path = KeenClientTD;
+			sourceTree = "<group>";
+		};
+		8D01BE47485804527E322593FD5B46B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84DA83E73D8969EF03459B49502E720F /* KeenClientTD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BAB387D3ADDDDD43F09F4BE1C33C1DC2 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				06CE3A7AE4ED8A6C6B598BA7F07FD6CC /* TreasureData-iOS-SDK.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		BFDEAC0CF60F4EF1DAECBBDC440EF4E3 /* Pods-TreasureDataExampleSwift */ = {
+			isa = PBXGroup;
+			children = (
+				057186F78137D3885174998400B8CE8B /* Info.plist */,
+				D4D01CDE53BEFA41D8A1E03A37293B41 /* Pods-TreasureDataExampleSwift.modulemap */,
+				D812D97D8D16F06613816F8DFF3F534B /* Pods-TreasureDataExampleSwift-acknowledgements.markdown */,
+				35F6C239E783754FD896B8CB6C2B323A /* Pods-TreasureDataExampleSwift-acknowledgements.plist */,
+				BB5D06D94D5C805E2B4A7AC5613DAFFA /* Pods-TreasureDataExampleSwift-dummy.m */,
+				32F8B8DBD028AC88967B9D607CA3895C /* Pods-TreasureDataExampleSwift-frameworks.sh */,
+				DABA35D5AE06A5582F235C4BE80267A2 /* Pods-TreasureDataExampleSwift-resources.sh */,
+				6766033FF426FA6C391663DF2D74402E /* Pods-TreasureDataExampleSwift-umbrella.h */,
+				DF9168273612A216904F7D57E6E5B527 /* Pods-TreasureDataExampleSwift.debug.xcconfig */,
+				CC589B48AAFFCDCA0D9EB0526256C134 /* Pods-TreasureDataExampleSwift.release.xcconfig */,
+			);
+			name = "Pods-TreasureDataExampleSwift";
+			path = "Target Support Files/Pods-TreasureDataExampleSwift";
+			sourceTree = "<group>";
+		};
+		D1081BF6440DA82F731D406441CA383F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C46CBCE531DA2DFB65942BB037E5DDB /* TreasureData-iOS-SDK */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D6A803A745E523EC73EAF5A8045A0D79 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE8359009C82F15AC30318B37B59D5B7 /* Info.plist */,
+				74A0E044CDEB6986E062118C6D3736B4 /* KeenClientTD.modulemap */,
+				6C3F595DAD8C0D9094475FC61A949953 /* KeenClientTD.xcconfig */,
+				7FA5CE71E290E23986383B97C56AB2A0 /* KeenClientTD-dummy.m */,
+				2211B5B359F8D517C90BDA062C486DE7 /* KeenClientTD-prefix.pch */,
+				32A02B2D1C68A4C494DC4AB69922BC23 /* KeenClientTD-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KeenClientTD";
+			sourceTree = "<group>";
+		};
+		F4CEBD27C01AA7DC84579545ED30BB7E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C5D507E664781A18C3575314A56AB79 /* Info.plist */,
+				95E629854C62745363E84BA566043E91 /* TreasureData-iOS-SDK.modulemap */,
+				837BB48579F7731B2FC74E78A135C5C3 /* TreasureData-iOS-SDK.xcconfig */,
+				7AEA2E82FB449BEB3ED762312507C7DA /* TreasureData-iOS-SDK-dummy.m */,
+				227C514AA6EAA8331B9DBECF04014330 /* TreasureData-iOS-SDK-prefix.pch */,
+				002D1924BC40F15F2B27028D89EE9760 /* TreasureData-iOS-SDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "TreasureDataExampleSwift/Pods/Target Support Files/TreasureData-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		F60145B1B513CD598F4B8A8F1CDBFD96 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFDEAC0CF60F4EF1DAECBBDC440EF4E3 /* Pods-TreasureDataExampleSwift */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		FA8B04AEA47EC6D3F461AD079B947098 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1342D98FDD5AE3B0BED0AC1A819BAC7 /* KeenClientTD.framework */,
+				A76CE01233502D6EA14642882628871C /* Pods_TreasureDataExampleSwift.framework */,
+				9AA6C9AD18555BF9A47E3ABE735DB049 /* TreasureData_iOS_SDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDD4ACDF2FF249A7DE641F3F21BEBC06 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				27FBE1D2FCD9C6251842A050FAF411C2 /* Foundation.framework */,
+				1A0F5EE6F01D4BB6FFE7B31F051D2B93 /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8ED30260FAA280474C283C7D0BFE8E8B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32EEE4FD56F6C93EEC01AAA5D0146885 /* Pods-TreasureDataExampleSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D652BA16B4A30FB97534B6AD5BEA015F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C2FFD25A7D0C71AC672F68B85B27115 /* keen_io_sqlite3.h in Headers */,
+				C12F6425C21384F293AF9E7B5E5377DA /* KeenClient.h in Headers */,
+				AD021AC8ECF68D964592B7A1200891BA /* KeenClientTD-umbrella.h in Headers */,
+				6BC67CCF0999FF1501978F943C5956DD /* KeenConstants.h in Headers */,
+				E923819F1D86FB5C6E0133A672B7A9FA /* KeenProperties.h in Headers */,
+				1B26614635B88A145FF1D1977C99C32B /* KIOEventStore.h in Headers */,
+				2BC1311673954EEFFE991A452CD52905 /* KIOEventStore_PrivateMethods.h in Headers */,
+				68E468F3AAE5A33A5EAB341ACDB01EA2 /* MF_Base64Additions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D84B04DF6B4A38657653DB36F1920E92 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6115D25D1744FB8A193DC191ACEEBC1 /* Constants.h in Headers */,
+				2F2E585AAC1A3285808170148B5C6EEC /* Deflate.h in Headers */,
+				63A7F75BAE7F58E6A2F176888E531C24 /* Session.h in Headers */,
+				E4700EB1A047A7A6F8A22835CF88213F /* TDClient.h in Headers */,
+				3ED42887745A83FCFADDAB1E577D6D0E /* TDUtils.h in Headers */,
+				A0E72C98941972F879FB2F12E73DFAD9 /* TreasureData-iOS-SDK-umbrella.h in Headers */,
+				56295C3E097D54F3EB4B1654A60837CB /* TreasureData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		136A2FC4AFCE0BD36B84CA331DD525A6 /* KeenClientTD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BFD3EE5E81895566E132DCF79092177 /* Build configuration list for PBXNativeTarget "KeenClientTD" */;
+			buildPhases = (
+				D652BA16B4A30FB97534B6AD5BEA015F /* Headers */,
+				E26AFB1A04CF421691480E8D38F06473 /* Sources */,
+				9F603DBC072DA1D566B37A964F409B44 /* Frameworks */,
+				2DDFE253B9086C397C40037330EF34C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeenClientTD;
+			productName = KeenClientTD;
+			productReference = A1342D98FDD5AE3B0BED0AC1A819BAC7 /* KeenClientTD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70FC99F7A790FD60631158C17A8F60DC /* TreasureData-iOS-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 825262EFD8F9055E5006C5D841BF491E /* Build configuration list for PBXNativeTarget "TreasureData-iOS-SDK" */;
+			buildPhases = (
+				D84B04DF6B4A38657653DB36F1920E92 /* Headers */,
+				C72B308D820C155D7C067AF907A4DB53 /* Sources */,
+				9DA1BFB33A74EBFBEC11BC27F1BB8CEB /* Frameworks */,
+				9A7B2D7824A822A9DAA9DC98508DC096 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC38A25FA78BC3406F583F675B6B7DE9 /* PBXTargetDependency */,
+			);
+			name = "TreasureData-iOS-SDK";
+			productName = "TreasureData-iOS-SDK";
+			productReference = 9AA6C9AD18555BF9A47E3ABE735DB049 /* TreasureData_iOS_SDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7C5875F1A75DEEFEF426D8B4988CB810 /* Pods-TreasureDataExampleSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2926A603F0C8A5989052DD888D95FE79 /* Build configuration list for PBXNativeTarget "Pods-TreasureDataExampleSwift" */;
+			buildPhases = (
+				8ED30260FAA280474C283C7D0BFE8E8B /* Headers */,
+				F26F2FD30771DF1697CE02FF7255A18D /* Sources */,
+				B3B2E77CC934E743C7C55EFC2B9996A6 /* Frameworks */,
+				D8051AEE8A6EC51092D3397A9E0F8C12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03C35CC07AA9903472A8C03E891AD94C /* PBXTargetDependency */,
+				8C27185587E50A617D97E41D8EE55B1D /* PBXTargetDependency */,
+			);
+			name = "Pods-TreasureDataExampleSwift";
+			productName = "Pods-TreasureDataExampleSwift";
+			productReference = A76CE01233502D6EA14642882628871C /* Pods_TreasureDataExampleSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = FA8B04AEA47EC6D3F461AD079B947098 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				136A2FC4AFCE0BD36B84CA331DD525A6 /* KeenClientTD */,
+				7C5875F1A75DEEFEF426D8B4988CB810 /* Pods-TreasureDataExampleSwift */,
+				70FC99F7A790FD60631158C17A8F60DC /* TreasureData-iOS-SDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DDFE253B9086C397C40037330EF34C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A7B2D7824A822A9DAA9DC98508DC096 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8051AEE8A6EC51092D3397A9E0F8C12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C72B308D820C155D7C067AF907A4DB53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D217FDB6D76321A77837293F0DF3FAB9 /* Deflate.m in Sources */,
+				3EC0465F1658283662C5EBEC4C0BEFF5 /* Session.m in Sources */,
+				55F34EFB323A96B721F9EB8A00BF3C1B /* TDClient.m in Sources */,
+				C1C7319ACB1E8211F074CC2DAB76F0A3 /* TDUtils.m in Sources */,
+				49F53B4CC8F0F24815A0F329667ACA04 /* TreasureData-iOS-SDK-dummy.m in Sources */,
+				FADB47F65A105510C5A0ED8905FA9222 /* TreasureData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26AFB1A04CF421691480E8D38F06473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F068B2F25DB2169B09F81927C770958A /* keen_io_sqlite3.c in Sources */,
+				31A0C0D72E85A4E8BE37052C4029D4A5 /* KeenClient.m in Sources */,
+				C8511B8AA15BD42A38A2CB048C749837 /* KeenClientTD-dummy.m in Sources */,
+				90DD3A08EEC168C99E73719D45E53DA7 /* KeenConstants.m in Sources */,
+				549AE1F42262E5C39FE2D9394E81BA9F /* KeenProperties.m in Sources */,
+				D6282DCD1EE5C380DEED4521A1DB25B2 /* KIOEventStore.m in Sources */,
+				94B9AC15A8421C8E3FF098325E5C1660 /* MF_Base64Additions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26F2FD30771DF1697CE02FF7255A18D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AE40186E2F81C4C339B937EED6EF720 /* Pods-TreasureDataExampleSwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03C35CC07AA9903472A8C03E891AD94C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KeenClientTD;
+			target = 136A2FC4AFCE0BD36B84CA331DD525A6 /* KeenClientTD */;
+			targetProxy = 597AA1F2B2ED517454A81679CC82725A /* PBXContainerItemProxy */;
+		};
+		8C27185587E50A617D97E41D8EE55B1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TreasureData-iOS-SDK";
+			target = 70FC99F7A790FD60631158C17A8F60DC /* TreasureData-iOS-SDK */;
+			targetProxy = 1855F206C7984AE4BECD5DF0778C37D7 /* PBXContainerItemProxy */;
+		};
+		EC38A25FA78BC3406F583F675B6B7DE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KeenClientTD;
+			target = 136A2FC4AFCE0BD36B84CA331DD525A6 /* KeenClientTD */;
+			targetProxy = CA98A47A2AAFD868F18D7953CA9E5AD3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1095651BB98DA21DE8E4BAB8A8E075E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3F595DAD8C0D9094475FC61A949953 /* KeenClientTD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KeenClientTD/KeenClientTD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KeenClientTD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KeenClientTD/KeenClientTD.modulemap";
+				PRODUCT_MODULE_NAME = KeenClientTD;
+				PRODUCT_NAME = KeenClientTD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		25CFACC793E5C7579DDFFA7DB4DDE1D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF9168273612A216904F7D57E6E5B527 /* Pods-TreasureDataExampleSwift.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TreasureDataExampleSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TreasureDataExampleSwift/Pods-TreasureDataExampleSwift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		52E569B3C889A30B81A9E8DBCF12D54F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 837BB48579F7731B2FC74E78A135C5C3 /* TreasureData-iOS-SDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TreasureData-iOS-SDK/TreasureData-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TreasureData-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TreasureData-iOS-SDK/TreasureData-iOS-SDK.modulemap";
+				PRODUCT_MODULE_NAME = TreasureData_iOS_SDK;
+				PRODUCT_NAME = TreasureData_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		73318C0CEFFB1608EC52403459156A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 837BB48579F7731B2FC74E78A135C5C3 /* TreasureData-iOS-SDK.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TreasureData-iOS-SDK/TreasureData-iOS-SDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TreasureData-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TreasureData-iOS-SDK/TreasureData-iOS-SDK.modulemap";
+				PRODUCT_MODULE_NAME = TreasureData_iOS_SDK;
+				PRODUCT_NAME = TreasureData_iOS_SDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		85D55F5C627D2CF16804D24EA5E3AFED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9F59DEC70AF65635AF7DC21B80275019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC589B48AAFFCDCA0D9EB0526256C134 /* Pods-TreasureDataExampleSwift.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TreasureDataExampleSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TreasureDataExampleSwift/Pods-TreasureDataExampleSwift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BEBBC42CDFA4610314A1F4020F7FC20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3F595DAD8C0D9094475FC61A949953 /* KeenClientTD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KeenClientTD/KeenClientTD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KeenClientTD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KeenClientTD/KeenClientTD.modulemap";
+				PRODUCT_MODULE_NAME = KeenClientTD;
+				PRODUCT_NAME = KeenClientTD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C5DDD98402CE01CFFFE789C9C78998EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2926A603F0C8A5989052DD888D95FE79 /* Build configuration list for PBXNativeTarget "Pods-TreasureDataExampleSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25CFACC793E5C7579DDFFA7DB4DDE1D3 /* Debug */,
+				9F59DEC70AF65635AF7DC21B80275019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D55F5C627D2CF16804D24EA5E3AFED /* Debug */,
+				C5DDD98402CE01CFFFE789C9C78998EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		825262EFD8F9055E5006C5D841BF491E /* Build configuration list for PBXNativeTarget "TreasureData-iOS-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73318C0CEFFB1608EC52403459156A8B /* Debug */,
+				52E569B3C889A30B81A9E8DBCF12D54F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BFD3EE5E81895566E132DCF79092177 /* Build configuration list for PBXNativeTarget "KeenClientTD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEBBC42CDFA4610314A1F4020F7FC20F /* Debug */,
+				1095651BB98DA21DE8E4BAB8A8E075E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
