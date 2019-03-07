@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:pod/TreasureDataExample/Pods/Pods.xcodeproj">
+      location = "group:TreasureDataExampleSwift/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
